@@ -18,8 +18,11 @@ class DECollection:
     def get_status(self):
         return self.parsed_data["status"]
     
-    def get_ping(self):
-        return self.parsed_data["ping"]
+    def get_ping(self, ping_ind=None):
+        if ping_ind is None:
+            return self.parsed_data["ping"]
+        else:
+            return self.parsed_data["ping"][ping_ind]
     
     def get_temp(self):
         return self.parsed_data["temp"]
